@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+        }
+
+        /* Fixed Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            background-color: #1e3a8a;
+            color: white;
+            display: flex;
+            align-items: center;
+            padding: 0 25px;
+            z-index: 1000;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        /* Main Layout */
+        .dashboard {
+            display: flex;
+            min-height: 100vh;
+            padding-top: 60px;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 220px;
+            background-color: #172554;
+            color: white;
+            padding: 25px 15px;
+            min-height: calc(100vh - 60px);
+        }
+
+        .sidebar h2 {
+            text-align: center;
+            margin-top: 0;
+        }
+
+        .sidebar a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 12px 15px;
+            margin: 8px 0;
+            border-radius: 5px;
+        }
+
+        .sidebar a:hover {
+            background-color: #2563eb;
+        }
+
+        /* Main Content */
+        .main-content {
+            flex: 1;
+            padding: 30px;
+        }
+
+        .main-content h2 {
+            margin-top: 0;
+        }
+
+        /* Content Boxes */
+        .content-container {
+            display: flex;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .content-box {
+            flex: 1;
+            min-width: 250px;
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .content-box h3 {
+            margin-top: 0;
+            color: #1e3a8a;
+        }
+
+        /* Smaller Screens */
+        @media (max-width: 700px) {
+
+            .dashboard {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                width: 100%;
+                min-height: auto;
+            }
+
+            .sidebar h2 {
+                text-align: left;
+            }
+
+            .main-content {
+                padding: 20px;
+            }
+
+            .content-container {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>My Dashboard</h1>
+    </header>
+
+    <div class="dashboard">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <h2>Menu</h2>
+
+            <nav>
+                <a href="#">Dashboard</a>
+                <a href="#">Profile</a>
+                <a href="#">Messages</a>
+                <a href="#">Settings</a>
+                <a href="#">Logout</a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+
+            <h2>Dashboard Overview</h2>
+
+            <div class="content-container">
+
+                <div class="content-box">
+                    <h3>Total Users</h3>
+                    <p>1,250 registered users are currently using the platform.</p>
+                </div>
+
+                <div class="content-box">
+                    <h3>Total Orders</h3>
+                    <p>350 orders have been completed this month.</p>
+                </div>
+
+                <div class="content-box">
+                    <h3>Revenue</h3>
+                    <p>Monthly revenue has reached ₹75,000.</p>
+                </div>
+
+                <div class="content-box">
+                    <h3>Recent Activity</h3>
+                    <p>12 new users joined the platform today.</p>
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+
+</body>
+</html>

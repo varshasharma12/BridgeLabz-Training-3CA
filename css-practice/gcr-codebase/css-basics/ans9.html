@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newspaper Layout</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 30px;
+            background-color: #e5e5e5;
+            font-family: Georgia, serif;
+            color: #222;
+        }
+
+        .newspaper {
+            max-width: 1000px;
+            margin: auto;
+            padding: 30px;
+            background-color: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            column-span: all;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            font-size: 36px;
+            margin-top: 0;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #222;
+        }
+
+        .content {
+            column-count: 3;
+            column-gap: 30px;
+            text-align: justify;
+            font-size: 17px;
+            line-height: 1.6;
+        }
+
+        .content p {
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        .content img {
+            width: 180px;
+            height: 120px;
+            object-fit: cover;
+            float: left;
+            margin: 0 15px 10px 0;
+            border-radius: 5px;
+        }
+
+        /* Tablet */
+        @media (max-width: 800px) {
+            .content {
+                column-count: 2;
+            }
+        }
+
+        /* Mobile */
+        @media (max-width: 550px) {
+            body {
+                padding: 15px;
+            }
+
+            .newspaper {
+                padding: 20px;
+            }
+
+            .content {
+                column-count: 1;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            .content img {
+                width: 150px;
+                height: 100px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="newspaper">
+
+        <h1>The Daily News</h1>
+
+        <div class="content">
+
+            <p>
+                <img src="https://picsum.photos/id/1015/400/250" alt="Mountain">
+                Technology is changing the world at a very fast speed.
+                New inventions and digital services are making everyday
+                activities easier and more convenient. People can now
+                communicate, study and work from almost anywhere.
+            </p>
+
+            <p>
+                Education is another important area that has changed
+                because of technology. Online classes, digital books and
+                learning applications provide students with many new
+                opportunities. Students can learn new skills from anywhere
+                with the help of the internet.
+            </p>
+
+            <p>
+                Cities are also becoming smarter with the help of modern
+                technology. Smart transportation systems, renewable energy
+                and digital services are helping cities become cleaner and
+                more efficient. These developments can improve the quality
+                of life for citizens.
+            </p>
+
+            <p>
+                Social media has changed the way people communicate with
+                each other. Information can be shared within seconds.
+                However, people should always verify information before
+                sharing it because false information can spread quickly.
+            </p>
+
+            <p>
+                The future will bring many more technological developments.
+                Artificial intelligence, cloud computing and automation
+                are expected to influence businesses and daily life.
+                Learning and adapting to new technologies will become
+                increasingly important.
+            </p>
+
+            <p>
+                Environmental protection is also becoming an important
+                topic around the world. Governments and organizations are
+                working on renewable energy, recycling and sustainable
+                development to create a healthier environment for future
+                generations.
+            </p>
+
+        </div>
+
+    </main>
+
+</body>
+</html>

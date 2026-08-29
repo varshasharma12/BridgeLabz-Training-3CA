@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete CSS Layout</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            background: linear-gradient(90deg, #1e3a8a, #2563eb);
+            color: white;
+
+            padding: 15px 40px;
+            border-bottom: 3px solid #f59e0b;
+            outline: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .navbar {
+            max-width: 1100px;
+            margin: auto;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #fbbf24;
+        }
+
+        .hero {
+            height: 500px;
+
+            position: relative;
+
+            background-image:
+                linear-gradient(
+                    rgba(0, 0, 0, 0.55),
+                    rgba(0, 0, 0, 0.55)
+                ),
+                url("https://picsum.photos/id/1018/1500/700");
+
+            background-size: cover;
+            background-position: center;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+            color: white;
+        }
+
+        .hero-content {
+            position: absolute;
+
+            max-width: 700px;
+            padding: 30px;
+
+            border: 2px solid rgba(255, 255, 255, 0.7);
+            border-radius: 10px;
+
+            background-color: rgba(0, 0, 0, 0.35);
+
+            outline: 3px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 20px;
+        }
+
+        section {
+            max-width: 1100px;
+            margin: 50px auto;
+            padding: 40px;
+
+            background-color: white;
+
+            border: 1px solid #ddd;
+            border-radius: 10px;
+
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #1e3a8a;
+        }
+
+        .about-container {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .about-text {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .about-text p {
+            margin-bottom: 15px;
+        }
+
+        .about-image {
+            flex: 1;
+        }
+
+        .about-image img {
+            width: 100%;
+            display: block;
+
+            border: 5px solid #2563eb;
+            border-radius: 10px;
+
+            outline: 2px solid #f59e0b;
+        }
+
+        .services-container {
+            display: flex;
+            gap: 25px;
+        }
+
+        .service-box {
+            flex: 1;
+
+            padding: 30px;
+            text-align: center;
+
+            background: linear-gradient(
+                135deg,
+                #eff6ff,
+                #dbeafe
+            );
+
+            border: 2px solid #bfdbfe;
+            border-radius: 10px;
+
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+
+            transition: transform 0.3s ease;
+        }
+
+        .service-box:hover {
+            transform: translateY(-8px);
+        }
+
+        .service-box h3 {
+            color: #1e3a8a;
+            margin-bottom: 15px;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: auto;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 7px;
+            font-weight: bold;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+
+            padding: 12px;
+
+            border: 2px solid #ccc;
+            border-radius: 6px;
+
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+            font-size: 16px;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: #2563eb;
+            outline: 2px solid rgba(37, 99, 235, 0.2);
+        }
+
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            padding: 12px 30px;
+
+            border: none;
+            border-radius: 6px;
+
+            background: linear-gradient(
+                90deg,
+                #1e3a8a,
+                #2563eb
+            );
+
+            color: white;
+
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .submit-btn:hover {
+            background: #1e40af;
+        }
+
+        .top-button {
+            position: fixed;
+            right: 25px;
+            bottom: 25px;
+
+            width: 50px;
+            height: 50px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            background-color: rgba(37, 99, 235, 0.9);
+            color: white;
+
+            border-radius: 50%;
+            text-decoration: none;
+
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+        }
+
+        footer {
+            background: linear-gradient(
+                90deg,
+                #172554,
+                #1e3a8a
+            );
+
+            color: white;
+
+            text-align: center;
+
+            padding: 25px;
+
+            border-top: 4px solid #f59e0b;
+            margin-top: 50px;
+        }
+
+        @media (max-width: 800px) {
+
+            header {
+                padding: 15px 20px;
+            }
+
+            .navbar {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            nav ul {
+                gap: 15px;
+            }
+
+            .hero {
+                height: 400px;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .about-container {
+                flex-direction: column;
+            }
+
+            .services-container {
+                flex-direction: column;
+            }
+
+            section {
+                margin: 30px 15px;
+                padding: 25px;
+            }
+        }
+
+
+        @media (max-width: 500px) {
+
+            body {
+                font-size: 14px;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 28px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .hero-content {
+                padding: 20px;
+                margin: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header>
+        <div class="navbar">
+
+            <div class="logo">
+                MyWebsite
+            </div>
+
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+
+    <main>
+
+        <section class="hero" id="home">
+
+            <div class="hero-content">
+                <h1>Welcome to My Website</h1>
+                <p>
+                    We create modern, simple and responsive
+                    web experiences.
+                </p>
+            </div>
+
+        </section>
+
+        <section id="about">
+
+            <h2 class="section-title">
+                About Us
+            </h2>
+
+            <div class="about-container">
+
+                <div class="about-text">
+
+                    <h3>Who We Are</h3>
+
+                    <p>
+                        We are a creative team focused on building
+                        modern and user-friendly websites.
+                    </p>
+
+                    <p>
+                        Our goal is to provide simple, responsive
+                        and attractive digital experiences.
+                    </p>
+
+                </div>
+
+                <div class="about-image">
+
+                    <img
+                        src="https://picsum.photos/id/1/600/400"
+                        alt="About us"
+                    >
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section id="services">
+
+            <h2 class="section-title">
+                Our Services
+            </h2>
+
+            <div class="services-container">
+
+                <div class="service-box">
+
+                    <h3>Web Design</h3>
+
+                    <p>
+                        We create clean and attractive
+                        website designs.
+                    </p>
+
+                </div>
+
+                <div class="service-box">
+
+                    <h3>Development</h3>
+
+                    <p>
+                        We build responsive and
+                        user-friendly websites.
+                    </p>
+
+                </div>
+
+                <div class="service-box">
+
+                    <h3>Cloud Solutions</h3>
+
+                    <p>
+                        We provide modern cloud-based
+                        solutions for businesses.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+        <section id="contact">
+
+            <h2 class="section-title">
+                Contact Us
+            </h2>
+
+            <form class="contact-form">
+
+                <div class="form-group">
+
+                    <label for="name">
+                        Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        placeholder="Enter your name"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="email">
+                        Email
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Enter your email"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="message">
+                        Message
+                    </label>
+
+                    <textarea
+                        id="message"
+                        placeholder="Enter your message"
+                    ></textarea>
+
+                </div>
+
+
+                <button type="submit" class="submit-btn">
+                    Send Message
+                </button>
+
+            </form>
+
+        </section>
+
+    </main>
+
+
+    <a href="#home" class="top-button">
+        ↑
+    </a>
+
+    <footer>
+
+        <p>
+            © 2026 MyWebsite. All Rights Reserved.
+        </p>
+
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Gallery</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 30px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .photo {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .photo img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .photo:hover img {
+            transform: scale(1.1);
+        }
+
+        .caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 15px 0;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .photo:hover .caption {
+            opacity: 1;
+        }
+
+        /* Tablet */
+        @media (max-width: 768px) {
+            .gallery {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Mobile */
+        @media (max-width: 500px) {
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>My Photo Gallery</h1>
+
+    <div class="gallery">
+
+        <div class="photo">
+            <img src="https://picsum.photos/id/1015/600/400" alt="Mountain">
+            <div class="caption">Beautiful Mountain</div>
+        </div>
+
+        <div class="photo">
+            <img src="https://picsum.photos/id/1016/600/400" alt="Nature">
+            <div class="caption">Peaceful Nature</div>
+        </div>
+
+        <div class="photo">
+            <img src="https://picsum.photos/id/1018/600/400" alt="Landscape">
+            <div class="caption">Amazing Landscape</div>
+        </div>
+
+        <div class="photo">
+            <img src="https://picsum.photos/id/1025/600/400" alt="Dog">
+            <div class="caption">Cute Dog</div>
+        </div>
+
+        <div class="photo">
+            <img src="https://picsum.photos/id/1035/600/400" alt="River">
+            <div class="caption">Beautiful River</div>
+        </div>
+
+        <div class="photo">
+            <img src="https://picsum.photos/id/1043/600/400" alt="Beach">
+            <div class="caption">Sunny Beach</div>
+        </div>
+
+    </div>
+
+</body>
+</html>
