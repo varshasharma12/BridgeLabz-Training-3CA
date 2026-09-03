@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+
+        .dashboard {
+            display: grid;
+            grid-template-columns: 220px 1fr;
+            grid-template-rows: 70px 1fr;
+            grid-template-areas:
+                "header header"
+                "sidebar main";
+            min-height: 100vh;
+            grid-gap: 20px;
+        }
+
+        header {
+            grid-area: header;
+            background-color: #333;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        header h1 {
+            font-size: 28px;
+        }
+
+        aside {
+            grid-area: sidebar;
+            background-color: #222;
+            padding: 30px 20px;
+        }
+
+        aside nav {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        aside a {
+            color: white;
+            text-decoration: none;
+            padding: 12px;
+            border-radius: 5px;
+        }
+
+        aside a:hover {
+            background-color: #444;
+        }
+
+        main {
+            grid-area: main;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 200px);
+            gap: 20px;
+            padding: 10px 20px 20px 0;
+        }
+
+        .box {
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: 0.3s;
+        }
+
+        .box:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+        }
+
+        .box h2 {
+            font-size: 24px;
+        }
+
+        .box:first-child {
+            grid-column: span 2;
+        }
+
+        @media (max-width: 700px) {
+            .dashboard {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto auto 1fr;
+                grid-template-areas:
+                    "header"
+                    "sidebar"
+                    "main";
+            }
+
+            aside nav {
+                flex-direction: row;
+                justify-content: space-around;
+                flex-wrap: wrap;
+            }
+
+            main {
+                grid-template-columns: 1fr;
+                grid-template-rows: repeat(4, 180px);
+                padding: 20px;
+            }
+
+            .box:first-child {
+                grid-column: span 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        <header>
+            <h1>Dashboard</h1>
+        </header>
+
+        <aside>
+            <nav>
+                <a href="#">Home</a>
+                <a href="#">Profile</a>
+                <a href="#">Settings</a>
+                <a href="#">Logout</a>
+            </nav>
+        </aside>
+
+        <main>
+            <div class="box">
+                <h2>Overview</h2>
+            </div>
+
+            <div class="box">
+                <h2>Users</h2>
+            </div>
+
+            <div class="box">
+                <h2>Projects</h2>
+            </div>
+
+            <div class="box">
+                <h2>Reports</h2>
+            </div>
+        </main>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background-color: #f5f5f5;
+        }
+
+        header {
+            width: 100%;
+            background-color: #333;
+            padding: 20px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            gap: 30px;
+            padding: 50px;
+        }
+
+        .box {
+            flex: 1;
+            min-height: 250px;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+            transition: 0.3s;
+        }
+
+        .box:hover {
+            transform: rotate(2deg);
+        }
+
+        .box h2 {
+            font-size: 25px;
+        }
+
+        footer {
+            width: 100%;
+            background-color: #333;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        @media (max-width: 700px) {
+            main {
+                flex-direction: column;
+                padding: 30px 20px;
+            }
+
+            .box {
+                width: 100%;
+                min-height: 180px;
+            }
+
+            nav {
+                gap: 20px;
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="box">
+            <h2>Services</h2>
+        </div>
+
+        <div class="box">
+            <h2>Projects</h2>
+        </div>
+
+        <div class="box">
+            <h2>Contact</h2>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2026 My Homepage. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
