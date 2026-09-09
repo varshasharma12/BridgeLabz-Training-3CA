@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Navigation Bar</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f7ff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        nav {
+            background: #1e293b;
+            padding: 15px 30px;
+            border-bottom: 3px solid #6366f1;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 12px 25px;
+            border: 1px solid #475569;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            background: #6366f1;
+            border-color: #6366f1;
+            transform: translateY(-3px);
+        }
+
+        .nav-links .active {
+            background: #6366f1;
+            border-color: #6366f1;
+            box-shadow: 0 4px 10px rgba(99,102,241,0.4);
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px;
+        }
+
+        main h1 {
+            color: #334155;
+            margin-bottom: 10px;
+        }
+
+        main p {
+            color: #64748b;
+            font-size: 17px;
+        }
+
+        footer {
+            background: #1e293b;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        @media (max-width: 700px) {
+            .nav-links {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .nav-links li {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .nav-links a {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <ul class="nav-links">
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Projects</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div>
+            <h1>Welcome to My Website</h1>
+            <p>Explore the navigation links above.</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2026 My Website. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

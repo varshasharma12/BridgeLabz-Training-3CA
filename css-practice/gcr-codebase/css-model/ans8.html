@@ -1,0 +1,174 @@
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Box Model Exploration</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #eef2ff;
+            min-height: 100vh;
+            padding: 40px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #4338ca;
+            margin-bottom: 15px;
+        }
+
+        .intro {
+            text-align: center;
+            color: #666;
+            margin-bottom: 35px;
+        }
+
+        .demo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 60px;
+            flex-wrap: wrap;
+        }
+
+        .demo {
+            text-align: center;
+        }
+
+        .demo h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .margin-layer {
+            background: #fde68a;
+            padding: 25px;
+            border: 2px dashed #d97706;
+        }
+
+        .border-layer {
+            background: #fca5a5;
+            border: 12px solid #dc2626;
+            padding: 20px;
+        }
+
+        .padding-layer {
+            background: #86efac;
+            padding: 25px;
+        }
+
+        .content-layer {
+            background: #93c5fd;
+            width: 180px;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #1e3a8a;
+            font-weight: bold;
+        }
+
+        .label {
+            margin-top: 15px;
+            line-height: 1.5;
+            color: #555;
+        }
+
+        .comparison {
+            margin-top: 45px;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .box {
+            width: 300px;
+            height: 170px;
+            padding: 25px;
+            border: 10px solid #6366f1;
+            background: #ddd6fe;
+        }
+
+        .default-box {
+            box-sizing: content-box;
+        }
+
+        .border-box {
+            box-sizing: border-box;
+        }
+
+        .box h3 {
+            color: #312e81;
+            margin-bottom: 10px;
+        }
+
+        .box p {
+            color: #444;
+            line-height: 1.5;
+        }
+
+        .default-box {
+            outline: 4px solid #f59e0b;
+        }
+
+        .border-box {
+            outline: 4px solid #10b981;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>CSS Box Model Exploration</h1>
+    <p class="intro">Every HTML element is made up of content, padding, border and margin.</p>
+
+    <div class="demo-container">
+        <div class="demo">
+            <h2>Box Model Layers</h2>
+            <div class="margin-layer">
+                Margin
+                <div class="border-layer">
+                    Border
+                    <div class="padding-layer">
+                        Padding
+                        <div class="content-layer">
+                            Content
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p class="label">
+                <b>Content:</b> Actual text or element.<br>
+                <b>Padding:</b> Space around content.<br>
+                <b>Border:</b> Line surrounding padding.<br>
+                <b>Margin:</b> Space outside the border.
+            </p>
+        </div>
+    </div>
+
+    <div class="comparison">
+        <div class="box default-box">
+            <h3>Default Box Sizing</h3>
+            <p>
+                With content-box, width and height apply only to the content.
+                Padding and border are added outside the given size.
+            </p>
+        </div>
+
+        <div class="box border-box">
+            <h3>Border-Box</h3>
+            <p>
+                With border-box, padding and border are included inside the
+                given width and height.
+            </p>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Advanced CSS Selectors</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #eef2ff;
+            padding: 40px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #4338ca;
+            margin-bottom: 30px;
+        }
+
+        .container {
+            width: 600px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px #bbb;
+        }
+
+        /* Attribute selector: selects input having type="text" */
+        input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        /* Attribute selector: selects links whose href starts with https */
+        a[href^="https"] {
+            color: #2563eb;
+            font-weight: bold;
+        }
+
+        /* Pseudo-class: changes style when mouse is over the link */
+        a:hover {
+            color: #dc2626;
+        }
+
+        /* Pseudo-class: changes input style when it is selected */
+        input:focus {
+            border-color: #6366f1;
+            outline: none;
+            box-shadow: 0 0 8px #a5b4fc;
+        }
+
+        ul {
+            margin-top: 20px;
+            padding-left: 25px;
+        }
+
+        /* Pseudo-class: selects every second list item */
+        li:nth-child(2) {
+            background: #fef3c7;
+        }
+
+        li {
+            padding: 10px;
+            margin: 5px 0;
+        }
+
+        /* Pseudo-element: adds content before the heading */
+        h2::before {
+            content: "★ ";
+            color: #f59e0b;
+        }
+
+        /* Pseudo-element: adds content after the heading */
+        h2::after {
+            content: " ✓";
+            color: #16a34a;
+        }
+
+        /* Child combinator (>): selects direct children of .box */
+        .box > p {
+            color: #7c3aed;
+            font-weight: bold;
+        }
+
+        /* Adjacent sibling combinator (+): selects p immediately after h3 */
+        h3 + p {
+            color: #dc2626;
+        }
+
+        /* General sibling combinator (~): selects all p after h4 */
+        h4 ~ p {
+            background: #dcfce7;
+            padding: 8px;
+        }
+
+        /* Descendant combinator: selects p inside .description */
+        .description p {
+            color: #475569;
+            line-height: 1.5;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 25px;
+            border: none;
+            border-radius: 20px;
+            background: #4338ca;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #312e81;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Advanced CSS Selectors</h1>
+
+    <div class="container">
+
+        <h2>Item List</h2>
+
+        <input type="text" placeholder="Enter your name">
+
+        <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>React</li>
+        </ul>
+
+        <p><a href="https://www.google.com">Visit Google</a></p>
+
+        <div class="box">
+            <h3>Child Combinator</h3>
+            <p>This paragraph is a direct child of the box.</p>
+        </div>
+
+        <div class="description">
+            <h3>Adjacent Sibling</h3>
+            <p>This paragraph comes immediately after h3.</p>
+
+            <h4>General Sibling</h4>
+            <p>This paragraph is styled using ~ combinator.</p>
+            <p>This is another paragraph styled using ~ combinator.</p>
+
+            <div>
+                <p>This is a descendant paragraph.</p>
+            </div>
+        </div>
+
+        <button>Submit</button>
+
+    </div>
+
+</body>
+</html>

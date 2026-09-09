@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Height and Width Practice</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f2f2f2;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            width: 90%;
+            min-height: 80vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        .box1 {
+            width: 220px;
+            height: 180px;
+            background-color: lightblue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .box2 {
+            width: 30%;
+            height: 25vh;
+
+            min-height: 150px;
+            max-width: 350px;
+            background-color: lightgreen;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+        .box3 {
+            width: 18em;
+            height: 12em;
+
+            background-color: lightcoral;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            overflow: auto;
+        }
+
+        h1 {
+            position: absolute;
+            top: 20px;
+            text-align: center;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Height and Width Practice</h1>
+
+    <div class="container">
+
+        <div class="box1">
+            <div>
+                <h2>Box 1</h2>
+                <p>Width: 220px</p>
+                <p>Height: 180px</p>
+            </div>
+        </div>
+
+        <div class="box2">
+            <div>
+                <h2>Box 2</h2>
+                <p>Width: 30%</p>
+                <p>Height: 50vh</p>
+                <p>min-height: 150px</p>
+                <p>max-width: 350px</p>
+            </div>
+        </div>
+
+        <div class="box3">
+            <div>
+                <h2>Box 3</h2>
+                <p>Width: 18em</p>
+                <p>Height: 12em</p>
+                <p>overflow: auto</p>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
+

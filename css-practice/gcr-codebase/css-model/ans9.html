@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Outline and Focus Styling Form</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #dbeafe, #fce7f3);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+        }
+
+        .form-box {
+            width: 420px;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        h1 {
+            text-align: center;
+            color: #4338ca;
+            margin-bottom: 25px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+            font-size: 15px;
+            outline-offset: 4px;
+        }
+
+        input {
+            outline: 2px solid transparent;
+        }
+
+        textarea {
+            height: 120px;
+            resize: none;
+            outline: 2px dashed transparent;
+        }
+
+        input:focus {
+            outline: 2px solid #6366f1;
+            border-color: #6366f1;
+        }
+
+        textarea:focus {
+            outline: 2px dashed #ec4899;
+            border-color: #ec4899;
+        }
+
+        .name {
+            outline: 3px solid #10b981;
+            outline-offset: 5px;
+        }
+
+        .email {
+            outline: 3px dashed #f59e0b;
+            outline-offset: 5px;
+        }
+
+        .message {
+            outline: 3px dotted #ef4444;
+            outline-offset: 5px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            background: #4338ca;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+
+        button:hover {
+            background: #312e81;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-box">
+        <h1>Contact Form</h1>
+
+        <div class="form-group">
+            <label>Name</label>
+            <input type="text" class="name" placeholder="Enter your name">
+        </div>
+
+        <div class="form-group">
+            <label>Email</label>
+            <input type="email" class="email" placeholder="Enter your email">
+        </div>
+
+        <div class="form-group">
+            <label>Message</label>
+            <textarea class="message" placeholder="Write your message"></textarea>
+        </div>
+
+        <button>Submit</button>
+    </div>
+</body>
+</html>

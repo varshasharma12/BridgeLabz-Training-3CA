@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Shadows and Depth Effect</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #dbeafe, #fce7f3);
+            padding: 50px;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #4f46e5;
+            text-shadow: 3px 3px 5px #aaa;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+        }
+        .card {
+            width: 280px;
+            padding: 30px;
+            background: white;
+            text-align: center;
+            border-radius: 12px;
+            transition: 0.3s;
+            border-top: 5px solid #6366f1;
+        }
+        .card:nth-child(1) {
+            box-shadow: 5px 5px 10px #aaa;
+        }
+        .card:nth-child(2) {
+            box-shadow: 0 8px 20px #888;
+            border-top-color: #ec4899;
+        }
+        .card:nth-child(3) {
+            box-shadow: 0 0 15px #777;
+            border-top-color: #14b8a6;
+        }
+        .card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 30px #777;
+        }
+        .card h2 {
+            margin-bottom: 15px;
+            color: #333;
+            text-shadow: 2px 2px 4px #aaa;
+        }
+        .card p {
+            color: #555;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #6366f1;
+            color: white;
+            text-decoration: none;
+            border-radius: 20px;
+        }
+        .card:nth-child(2) .btn {
+            background: #ec4899;
+        }
+        .card:nth-child(3) .btn {
+            background: #14b8a6;
+        }
+    </style>
+</head>
+<body>
+    <h1>Profile Cards</h1>
+    <div class="container">
+        <div class="card">
+            <h2>Varsha</h2>
+            <p>Cloud Computing and DevOps Student</p>
+            <a href="#" class="btn">View Profile</a>
+        </div>
+        <div class="card">
+            <h2>Rahul</h2>
+            <p>Full Stack Developer</p>
+            <a href="#" class="btn">View Profile</a>
+        </div>
+        <div class="card">
+            <h2>Ananya</h2>
+            <p>UI/UX Designer</p>
+            <a href="#" class="btn">View Profile</a>
+        </div>
+    </div>
+</body>
+</html>
+

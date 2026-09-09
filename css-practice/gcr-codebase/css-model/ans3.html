@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gradient Background Webpage</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            padding-top: 70px;
+            padding-bottom: 60px;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 70px;
+
+            background-color: #222;
+            color: white;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            z-index: 1000;
+        }
+
+        header h1 {
+            font-size: 28px;
+        }
+
+       
+        .linear-section {
+            height: 500px;
+            background: linear-gradient(
+                135deg,
+                #667eea,
+                #764ba2
+            );
+
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 30px;
+        }
+
+        .linear-content h2 {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .linear-content p {
+            font-size: 20px;
+        }
+
+        
+        .radial-section {
+            height: 500px;
+
+            background: radial-gradient(
+                circle,
+                #ffecd2,
+                #fcb69f,
+                #ff7e5f
+            );
+
+            color: #222;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+
+            padding: 30px;
+            background-attachment: fixed;
+        }
+
+        .radial-content h2 {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .radial-content p {
+            font-size: 20px;
+        }
+        .extra {
+            height: 400px;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            background-color: #222;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Gradient Background Page</h1>
+    </header>
+
+    <main>
+        <section class="linear-section">
+            <div class="linear-content">
+                <h2>Linear Gradient</h2>
+                <p>
+                    This section uses a linear gradient.
+                    The colors change gradually in a straight direction.
+                </p>
+            </div>
+        </section>
+        <section class="radial-section">
+            <div class="radial-content">
+                <h2>Radial Gradient</h2>
+                <p>
+                    This section uses a radial gradient.
+                    The colors spread outward from the center.
+                </p>
+            </div>
+        </section>
+
+        
+        <section class="extra">
+            <h2>Scroll to see the parallax-like effect</h2>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© 2026 Gradient Webpage</p>
+    </footer>
+
+</body>
+</html>

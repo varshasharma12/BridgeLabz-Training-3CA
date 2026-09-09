@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Typography and Text Styling</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6fb;
+            padding: 40px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: auto;
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px #ccc;
+        }
+
+        h1 {
+            font-family: Georgia, serif;
+            font-size: 40px;
+            text-align: center;
+            color: #4338ca;
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+        }
+
+        .subtitle {
+            text-align: center;
+            font-size: 17px;
+            color: #777;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-family: Verdana, sans-serif;
+            font-size: 27px;
+            font-weight: 700;
+            color: #1e3a8a;
+            margin-bottom: 15px;
+        }
+
+        article {
+            font-family: Georgia, serif;
+            font-size: 18px;
+            line-height: 1.8;
+            letter-spacing: 0.5px;
+            text-align: justify;
+        }
+        article::first-letter {
+            font-size: 55px;
+            font-weight: bold;
+            color: #e11d48;
+            float: left;
+            line-height: 0.9;
+            margin-right: 8px;
+        }
+        article::first-line {
+            color: #4338ca;
+            font-weight: bold;
+        }
+        mark {
+            background: #fde68a;
+            color: #92400e;
+            padding: 2px 5px;
+        }
+        strong {
+            color: #dc2626;
+            font-weight: 800;
+        }
+
+        /* Custom style for em */
+        em {
+            color: #7c3aed;
+            font-style: italic;
+        }
+
+        .arial {
+            font-family: Arial, sans-serif;
+            font-size: 17px;
+            margin-top: 25px;
+            color: #444;
+        }
+
+        .courier {
+            font-family: "Courier New", monospace;
+            font-size: 16px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            margin-top: 15px;
+            color: #0f766e;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Typography & Text Styling</h1>
+        <p class="subtitle">Exploring fonts, sizes, spacing and text emphasis with CSS</p>
+        <h2>The Power of Good Typography</h2>
+        <article>
+            Typography plays an important role in making a webpage easy to read and visually attractive.
+            A good combination of <mark>font family</mark>, font size and spacing helps readers understand
+            content quickly. <strong>Strong text creates emphasis</strong>, while <em>italic text adds a
+            different style and feeling</em> to the content. Proper line-height also gives enough space
+            between lines and improves readability.
+        </article>
+        <p class="arial">
+            Arial is a clean and simple font that works well for normal website content and headings.
+        </p>
+        <p class="courier">
+            Courier New is a monospace font often used for code, technical information and examples.
+        </p>
+    </div>
+</body>
+</html>
+
