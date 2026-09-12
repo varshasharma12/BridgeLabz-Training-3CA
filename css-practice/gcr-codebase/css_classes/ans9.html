@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Combined Effects Demonstration</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #dbeafe, #f3e8ff);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #222;
+            margin-bottom: 40px;
+        }
+
+        .examples {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .example {
+            width: 250px;
+            padding: 30px 20px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease-in-out;
+        }
+
+        .example:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+        }
+
+        .example h2 {
+            color: #333;
+            margin-top: 0;
+        }
+
+        .example p {
+            color: #666;
+            line-height: 1.5;
+        }
+
+        button {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            background: #4f46e5;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease-in-out;
+        }
+
+        button:hover {
+            background: #e11d48;
+            transform: scale(1.1);
+            box-shadow: 0 7px 15px rgba(0, 0, 0, 0.25);
+        }
+
+        button:active {
+            transform: scale(0.95);
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #bbb;
+            border-radius: 8px;
+            font-size: 15px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #4f46e5;
+            transform: scale(1.05);
+            box-shadow: 0 0 10px rgba(79, 70, 229, 0.35);
+        }
+
+        .circle {
+            width: 80px;
+            height: 80px;
+            margin: 20px auto;
+            background: #06b6d4;
+            border-radius: 50%;
+            transition: all 0.4s ease-in-out;
+        }
+
+        .circle:hover {
+            transform: rotate(180deg) scale(1.15);
+            background: #f97316;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+        }
+
+        @media (max-width: 750px) {
+            .examples {
+                flex-direction: column;
+            }
+
+            .example {
+                width: 90%;
+                max-width: 350px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Combined CSS Effects</h1>
+
+        <div class="examples">
+
+            <div class="example">
+                <h2>Button</h2>
+                <p>Hover over the button to see color, size and shadow effects.</p>
+                <button>Hover Me</button>
+            </div>
+
+            <div class="example">
+                <h2>Input</h2>
+                <p>Click inside the input to see the focus effect.</p>
+                <input type="text" placeholder="Click here">
+            </div>
+
+            <div class="example">
+                <h2>Transform</h2>
+                <p>Hover over the circle to see rotation and scaling.</p>
+                <div class="circle"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
+

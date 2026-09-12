@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Styled Button Collection</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f8ff;
+            margin: 0;
+            padding: 50px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #1d4e89;
+            margin-bottom: 40px;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+
+        button {
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        .primary {
+            background-color: #1d4e89;
+            color: white;
+            border: 2px solid #1d4e89;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .primary:hover {
+            background-color: #163b68;
+        }
+
+        .primary:active {
+            transform: scale(0.95);
+        }
+
+        .secondary {
+            background-color: #5cb85c;
+            color: white;
+            border: 2px solid #5cb85c;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .secondary:hover {
+            background-color: #449d44;
+        }
+
+        .secondary:active {
+            transform: scale(0.95);
+        }
+
+        .outline {
+            background-color: white;
+            color: #1d4e89;
+            border: 2px solid #1d4e89;
+        }
+
+        .outline:hover {
+            background-color: #e8f1ff;
+        }
+
+        .outline:focus {
+            outline: 3px solid #8ec5ff;
+        }
+
+        .disabled {
+            background-color: #cccccc;
+            color: #777777;
+            border: 2px solid #cccccc;
+        }
+
+        .disabled:disabled {
+            cursor: not-allowed;
+            opacity: 0.7;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Styled Button Collection</h1>
+
+    <div class="button-container">
+
+        <button class="primary">Primary</button>
+        <button class="secondary">Secondary</button>
+        <button class="outline">Outline</button>
+        <button class="disabled" disabled>Disabled</button>
+
+    </div>
+
+</body>
+</html>

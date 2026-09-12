@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Box-Sizing Comparison</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #dbeafe, #fce7f3);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 900px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #222;
+            margin-bottom: 15px;
+        }
+
+        .description {
+            color: #555;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .boxes {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .box {
+            width: 350px;
+            padding: 30px;
+            border: 5px solid #333;
+            border-radius: 12px;
+            min-height: 220px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .default-box {
+            box-sizing: content-box;
+            background-color: #bfdbfe;
+        }
+
+        .border-box {
+            box-sizing: border-box;
+            background-color: #fecaca;
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #222;
+        }
+
+        p {
+            line-height: 1.5;
+            color: #333;
+        }
+
+        @media (max-width: 750px) {
+            .boxes {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .box {
+                width: 90%;
+                max-width: 350px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Box-Sizing Comparison</h1>
+
+        <p class="description">
+            The box-sizing property controls how the total width and height
+            of an element are calculated. Compare the two boxes below.
+        </p>
+
+        <div class="boxes">
+
+            <div class="box default-box">
+                <h2>Default Box</h2>
+                <p>
+                    Uses <strong>content-box</strong>. The specified width
+                    applies only to the content. Padding and border are added
+                    to the total size.
+                </p>
+            </div>
+
+            <div class="box border-box">
+                <h2>Border-Box</h2>
+                <p>
+                    Uses <strong>border-box</strong>. The specified width
+                    includes the content, padding, and border.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

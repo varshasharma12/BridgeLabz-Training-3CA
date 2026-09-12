@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tooltip Demonstration</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f8ff;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        h1 {
+            color: #1d4e89;
+            margin-bottom: 40px;
+        }
+
+        .examples {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .tooltip-box {
+            position: relative;
+            background-color: white;
+            padding: 20px 30px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .tooltip {
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #333;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 5px;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: 0.3s ease-in-out;
+            margin-bottom: 10px;
+            font-size: 14px;
+            font-weight: normal;
+        }
+
+        .tooltip-box:hover .tooltip {
+            opacity: 1;
+            visibility: visible;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>CSS Tooltip Demonstration</h1>
+
+        <div class="examples">
+
+            <div class="tooltip-box">
+                Home
+                <span class="tooltip">Go to Home Page</span>
+            </div>
+
+            <div class="tooltip-box">
+                Search
+                <span class="tooltip">Search for something</span>
+            </div>
+
+            <div class="tooltip-box">
+                Profile
+                <span class="tooltip">View your Profile</span>
+            </div>
+
+            <div class="tooltip-box">
+                Settings
+                <span class="tooltip">Open Settings</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

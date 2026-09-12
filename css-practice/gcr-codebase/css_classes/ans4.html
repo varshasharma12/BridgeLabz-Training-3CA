@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS Selectors Practice</title>
+
+    <style>
+        p {
+            color: #444;
+            font-size: 16px;
+        }
+
+        .info {
+            background-color: #e8f1ff;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        #main-heading {
+            color: #1d4e89;
+            text-align: center;
+        }
+
+        a[target] {
+            color: green;
+            font-weight: bold;
+        }
+        ul > li {
+            padding: 8px;
+            margin: 5px;
+            background-color: #f0f0f0;
+        }
+        h2 + p {
+            color: purple;
+        }
+        h2 ~ p {
+            margin-left: 15px;
+        }
+        ul a {
+            text-decoration: none;
+            color: #d35400;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 30px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 15px;
+            background-color: #1d4e89;
+            color: white;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1 id="main-heading">CSS Selectors Practice Page</h1>
+
+        <h2>Element Selector</h2>
+        <p>This paragraph is styled using an element selector.</p>
+
+        <h2>Class Selector</h2>
+        <p class="info">
+            This paragraph uses a class selector.
+        </p>
+
+        <h2>ID Selector</h2>
+        <p>
+            The main heading above uses an ID selector.
+        </p>
+
+        <h2>Attribute Selector</h2>
+        <p>
+            Visit
+            <a href="https://www.google.com" target="_blank">
+                Google
+            </a>
+            to see an attribute selector.
+        </p>
+
+        <h2>Combinator Selectors</h2>
+
+        <ul>
+            <li>Direct child using <a href="#">Child Selector</a></li>
+            <li>Another list item</li>
+            <li>Third list item</li>
+        </ul>
+
+        <p>This paragraph demonstrates the sibling selectors.</p>
+        <p>Another paragraph after the heading.</p>
+
+    </div>
+
+    <footer>
+        CSS Selectors Practice Page
+    </footer>
+
+</body>
+</html>

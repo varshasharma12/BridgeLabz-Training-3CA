@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pseudo-Classes Demo</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f8ff;
+            margin: 0;
+            padding: 40px;
+        }
+        h1 {
+            text-align: center;
+            color: #1d4e89;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 40px;
+        }
+        .box {
+            width: 220px;
+            min-height: 180px;
+            background-color: white;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .box h2 {
+            color: #1d4e89;
+        }
+
+        .hover-link {
+            color: blue;
+            text-decoration: none;
+        }
+
+        .hover-link:hover {
+            color: white;
+            background-color: green;
+            padding: 8px;
+            border-radius: 5px;
+        }
+
+        .focus-button {
+            padding: 10px 20px;
+            border: 2px solid #1d4e89;
+            background-color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .focus-button:focus {
+            background-color: yellow;
+            outline: 3px solid orange;
+        }
+
+        .active-button {
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .active-button:active {
+            background-color: red;
+            transform: scale(0.95);
+        }
+
+        .list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .list li {
+            padding: 8px;
+            margin: 5px;
+            background-color: #e8f1ff;
+        }
+
+        .list li:nth-child(odd) {
+            background-color: #bde0fe;
+        }
+
+        .list li:nth-child(even) {
+            background-color: #d8f3dc;
+        }
+
+        .description {
+            color: #555;
+            font-size: 14px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Pseudo-Classes Demonstration</h1>
+
+    <div class="container">
+
+        <div class="box">
+            <h2>Hover</h2>
+
+            <a href="#" class="hover-link">Hover over me</a>
+
+            <p class="description">
+                Changes the color and background when the mouse moves over the link.
+            </p>
+        </div>
+
+        <div class="box">
+            <h2>Focus</h2>
+
+            <button class="focus-button">Click / Focus Me</button>
+
+            <p class="description">
+                Changes the button style when the button receives focus.
+            </p>
+        </div>
+
+        <div class="box">
+            <h2>Active</h2>
+
+            <button class="active-button">Press Me</button>
+
+            <p class="description">
+                Changes the button while it is being pressed.
+            </p>
+        </div>
+
+        <div class="box">
+            <h2>nth-child()</h2>
+
+            <ul class="list">
+                <li>First Item</li>
+                <li>Second Item</li>
+                <li>Third Item</li>
+                <li>Fourth Item</li>
+            </ul>
+
+            <p class="description">
+                Applies different backgrounds to odd and even list items.
+            </p>
+        </div>
+
+    </div>
+
+</body>
+</html>

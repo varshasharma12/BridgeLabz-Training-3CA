@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS Animation Demonstration</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #f2f7ff;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            width: 80%;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 40px;
+            color: #222;
+        }
+
+        .animations {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 80px;
+        }
+
+        .box {
+            width: 80px;
+            height: 80px;
+            background: #4a90e2;
+            animation: moveBox 2s ease-in-out infinite alternate;
+        }
+
+        .ball {
+            width: 70px;
+            height: 70px;
+            background: #ff6b6b;
+            border-radius: 50%;
+            animation: bounceBall 1.5s ease-in-out infinite;
+            animation-delay: 0.5s;
+        }
+
+        .text {
+            font-size: 28px;
+            font-weight: bold;
+            animation: colorChange 3s ease-in-out infinite alternate;
+            animation-direction: alternate;
+        }
+
+        @keyframes moveBox {
+            from {
+                transform: translateX(-60px);
+            }
+            to {
+                transform: translateX(60px);
+            }
+        }
+
+        @keyframes bounceBall {
+            0%, 100% {
+                transform: translateY(-30px);
+            }
+
+            50% {
+                transform: translateY(30px);
+            }
+        }
+
+        @keyframes colorChange {
+            0% {
+                color: #333;
+                transform: scale(1);
+            }
+
+            50% {
+                color: #4a90e2;
+                transform: scale(1.2);
+            }
+
+            100% {
+                color: #e91e63;
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>CSS Animation Demonstration</h1>
+
+        <div class="animations">
+            <div class="box"></div>
+
+            <div class="ball"></div>
+
+            <div class="text">CSS Animation</div>
+        </div>
+    </div>
+
+</body>
+</html>
+
