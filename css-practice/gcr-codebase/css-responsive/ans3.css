@@ -1,0 +1,73 @@
+/* Basic styling */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+}
+
+/* Header */
+header {
+    text-align: center;
+    background-color: #333;
+    color: white;
+    padding: 25px;
+}
+
+/* Cards layout */
+.cards {
+    display: flex;
+    gap: 20px;
+    padding: 40px;
+}
+
+.card {
+    flex: 1;
+    padding: 30px;
+    background-color: white;
+    text-align: center;
+    border-radius: 8px;
+}
+
+.card h2 {
+    margin-bottom: 15px;
+}
+
+/* Hover effect */
+.card:hover {
+    background-color: #d9f0ff;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+    .cards {
+        flex-wrap: wrap;
+    }
+
+    .card {
+        flex: 0 0 calc(50% - 10px);
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .cards {
+        flex-direction: column;
+    }
+
+    .card {
+        flex: 1;
+    }
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    background-color: #333;
+    color: white;
+    padding: 20px;
+}

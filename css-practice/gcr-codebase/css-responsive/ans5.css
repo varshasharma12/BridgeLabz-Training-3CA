@@ -1,0 +1,95 @@
+/* Basic styling */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+}
+
+/* Header */
+header {
+    text-align: center;
+    background-color: #333;
+    color: white;
+    padding: 25px;
+}
+
+/* Cards layout */
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    padding: 50px;
+}
+
+/* Card styling */
+.card {
+    width: 280px;
+    background-color: white;
+    text-align: center;
+    padding-bottom: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+    animation: fadeIn 1s ease;
+    transition: transform 0.3s;
+}
+
+/* Image styling */
+.card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    transition: filter 0.3s;
+}
+
+/* Filters */
+.grayscale {
+    filter: grayscale(100%);
+}
+
+.sepia {
+    filter: sepia(100%);
+}
+
+/* Card hover */
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card:hover img {
+    filter: none;
+}
+
+/* Text */
+.card h2 {
+    margin-top: 15px;
+    margin-bottom: 8px;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Responsive layout */
+@media (max-width: 799px) {
+    .cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 90%;
+        max-width: 350px;
+    }
+}
