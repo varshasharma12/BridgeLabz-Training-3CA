@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Form Validator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            width: 300px;
+            margin: 30px auto;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 2px solid gray;
+        }
+
+        .valid {
+            border-color: green;
+        }
+
+        .invalid {
+            border-color: red;
+        }
+
+        .error {
+            color: red;
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Student Registration</h2>
+
+    <form id="studentForm" novalidate>
+        <label>Name:</label>
+        <input type="text" id="name">
+        <div class="error" id="nameError"></div>
+
+        <label>Email:</label>
+        <input type="text" id="email">
+        <div class="error" id="emailError"></div>
+
+        <label>Phone:</label>
+        <input type="text" id="phone">
+        <div class="error" id="phoneError"></div>
+
+        <label>Password:</label>
+        <input type="password" id="password">
+        <div class="error" id="passwordError"></div>
+
+        <br>
+        <button type="submit">Register</button>
+        <p id="message"></p>
+    </form>
+
+    <script src="Q2_StudentForm.js"></script>
+</body>
+</html>
