@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Gallery</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            padding: 20px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal img {
+            width: 70%;
+            max-width: 700px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Image Gallery</h1>
+
+    <div class="gallery">
+        <img src="https://picsum.photos/id/1015/400/300">
+        <img src="https://picsum.photos/id/1016/400/300">
+        <img src="https://picsum.photos/id/1018/400/300">
+        <img src="https://picsum.photos/id/1020/400/300">
+        <img src="https://picsum.photos/id/1024/400/300">
+        <img src="https://picsum.photos/id/1035/400/300">
+    </div>
+
+    <div class="modal" id="imageModal">
+        <img id="previewImage" src="" alt="Preview">
+    </div>
+
+    <script>
+        const galleryImages = document.querySelectorAll(".gallery img");
+
+        const modal = document.getElementById("imageModal");
+
+        const previewImage = document.getElementById("previewImage");
+
+        galleryImages.forEach(function(image) {
+
+            image.addEventListener("click", function() {
+
+                previewImage.setAttribute("src", image.src);
+
+                modal.style.display = "flex";
+
+            });
+
+        });
+
+        modal.addEventListener("click", function() {
+            modal.style.display = "none";
+        });
+
+        previewImage.addEventListener("click", function(event) {
+            event.stopPropagation();
+        });
+
+    </script>
+
+</body>
+</html>

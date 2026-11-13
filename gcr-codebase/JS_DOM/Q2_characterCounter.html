@@ -1,0 +1,166 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Character Counter</title>
+
+    <!-- CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .container {
+            background-color: white;
+            max-width: 500px;
+            margin: auto;
+            padding: 25px;
+            border-radius: 10px;
+        }
+
+        textarea {
+            width: 90%;
+            padding: 10px;
+            font-size: 16px;
+            resize: none;
+        }
+
+        #counter {
+            font-size: 18px;
+            font-weight: bold;
+            color: green;
+        }
+
+        .warning {
+            color: #d99b00 !important;
+        }
+
+        .danger {
+            color: red !important;
+        }
+
+        button {
+            padding: 10px 25px;
+            background-color: blue;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Live Character Counter</h1>
+
+        <textarea id="message"
+                  placeholder="Type your message..."
+                  rows="6"></textarea>
+
+        <p id="counter">100 characters remaining</p>
+
+        <button id="resetButton">Reset</button>
+
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+
+        const message = document.getElementById("message");
+        const counter = document.getElementById("counter");
+        const resetButton = document.getElementById("resetButton");
+
+        const maxCharacters = 100;
+
+        // Function to update character counter
+        function updateCounter() {
+
+            const remainingCharacters =
+                maxCharacters - message.value.length;
+
+            counter.textContent =
+                remainingCharacters + " characters remaining";
+
+            // Remove previous classes
+            counter.classList.remove("warning", "danger");
+
+            // Red when 0 characters are remaining
+            if (remainingCharacters === 0) {
+                counter.classList.add("danger");
+            }
+
+            // Yellow when 20 or fewer characters are remaining
+            else if (remainingCharacters <= 20) {
+                counter.classList.add("warning");
+            }
+        }
+
+
+        // Prevent typing beyond 100 characters
+        message.addEventListener("keydown", function (event) {
+
+            const allowedKeys = [
+                "Backspace", "Delete",
+                "ArrowLeft", "ArrowRight",
+                "ArrowUp", "ArrowDown",
+                "Tab", "Home", "End"
+            ];
+
+            if (
+                message.value.length >= maxCharacters &&
+                !allowedKeys.includes(event.key) &&
+                !(event.ctrlKey || event.metaKey)
+            ) {
+                event.preventDefault();
+            }
+        });
+
+
+        // Prevent pasting more than 100 characters
+        message.addEventListener("paste", function (event) {
+
+            const pastedText =
+                event.clipboardData.getData("text");
+
+            const selectedTextLength =
+                message.selectionEnd - message.selectionStart;
+
+            const newLength =
+                message.value.length -
+                selectedTextLength +
+                pastedText.length;
+
+            if (newLength > maxCharacters) {
+                event.preventDefault();
+            }
+        });
+
+
+        // Update counter whenever user types
+        message.addEventListener("input", updateCounter);
+
+
+        // Reset button
+        resetButton.addEventListener("click", function () {
+
+            message.value = "";
+
+            updateCounter();
+        });
+
+
+        // Initial counter
+        updateCounter();
+
+    </script>
+
+</body>
+</html>

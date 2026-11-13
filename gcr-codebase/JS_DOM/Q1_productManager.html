@@ -1,0 +1,210 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Product List Manager</title>
+
+    <!-- CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            text-align: center;
+            padding: 30px;
+        }
+
+        .container {
+            background-color: white;
+            max-width: 500px;
+            margin: auto;
+            padding: 25px;
+            border-radius: 10px;
+        }
+
+        input {
+            padding: 10px;
+            margin: 10px;
+        }
+
+        button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        #addButton {
+            background-color: blue;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            background-color: #eeeeee;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .product-name {
+            flex: 1;
+            text-align: left;
+        }
+
+        .edit-input {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .edit-btn {
+            background-color: green;
+        }
+
+        .delete-btn {
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Dynamic Product List Manager</h1>
+
+    <div class="container">
+
+        <input type="text" id="productInput"
+               placeholder="Enter product name">
+
+        <button id="addButton">Add Product</button>
+
+        <ul id="productList"></ul>
+
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+
+        const productInput = document.getElementById("productInput");
+        const addButton = document.getElementById("addButton");
+        const productList = document.getElementById("productList");
+
+        // Add new product
+        addButton.addEventListener("click", function () {
+
+            const productName = productInput.value.trim();
+
+            if (productName === "") {
+                alert("Please enter a product name");
+                return;
+            }
+
+            const listItem = document.createElement("li");
+
+            const productText = document.createElement("span");
+            productText.className = "product-name";
+            productText.textContent = productName;
+
+            const editButton = document.createElement("button");
+            editButton.textContent = "Edit";
+            editButton.className = "edit-btn";
+
+            const deleteButton = document.createElement("button");
+            deleteButton.textContent = "Delete";
+            deleteButton.className = "delete-btn";
+
+            listItem.append(productText, editButton, deleteButton);
+
+            productList.appendChild(listItem);
+
+            productInput.value = "";
+        });
+
+
+        // Event Delegation for Edit and Delete
+        productList.addEventListener("click", function (event) {
+
+            const listItem = event.target.closest("li");
+
+            if (!listItem || !productList.contains(listItem)) {
+                return;
+            }
+
+            // Delete product
+            if (event.target.classList.contains("delete-btn")) {
+                listItem.remove();
+            }
+
+            // Edit product
+            if (event.target.classList.contains("edit-btn")) {
+
+                if (listItem.querySelector(".edit-input")) {
+                    return;
+                }
+
+                const productText = listItem.querySelector(".product-name");
+
+                const editInput = document.createElement("input");
+
+                editInput.type = "text";
+                editInput.className = "edit-input";
+                editInput.value = productText.textContent;
+
+                productText.replaceWith(editInput);
+
+                editInput.focus();
+                editInput.select();
+            }
+        });
+
+
+        // Save edited product
+        function saveEditedProduct(listItem) {
+
+            const editInput = listItem.querySelector(".edit-input");
+
+            if (!editInput) {
+                return;
+            }
+
+            const updatedName = editInput.value.trim();
+
+            const productText = document.createElement("span");
+            productText.className = "product-name";
+
+            productText.textContent =
+                updatedName || editInput.defaultValue;
+
+            editInput.replaceWith(productText);
+        }
+
+
+        // Auto-save when clicking outside edited item
+        document.addEventListener("click", function (event) {
+
+            const editInput = document.querySelector(".edit-input");
+
+            if (!editInput) {
+                return;
+            }
+
+            const listItem = editInput.closest("li");
+
+            if (!listItem.contains(event.target)) {
+                saveEditedProduct(listItem);
+            }
+        });
+
+    </script>
+
+</body>
+</html>
